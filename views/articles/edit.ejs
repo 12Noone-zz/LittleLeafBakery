@@ -1,0 +1,16 @@
+<nav class="navbar">
+	<ul>
+		<li><a href="/articles/new">New Article</a></li>
+		<li><a href="/articles/">All Articles</a></li>
+		<li><a href="/">Home</a></li>
+	</ul>
+</nav>
+<form action="/articles/<%=article._id%>/?_method=PATCH" method="post">
+	<label>Author:</label>
+	<input type="text" name="article[author]" value="<%= article.author%>">
+	<label>Title:</label>
+	<input type="text" name="article[title]" value="<%= article.title%>">
+	<label>Content:</label>
+	<textarea name="article[content]"><%= article.content%></textarea>
+	<input type="submit" value="Edit My Article">
+</form>

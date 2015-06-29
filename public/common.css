@@ -1,0 +1,42 @@
+* {
+	box-sizing: border-box;
+	font: inherit;
+}
+.container {
+	width: 1000px;
+	position: relative;
+	text-align: center;
+}
+.content {
+	background-color: white;
+	border-radius: 10px;
+	width: 100%;
+	height: 400px;
+	margin: auto;
+}
+
+.content h1 {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+.navbar {
+	float: left;
+	background-color: #8A002E;
+	height: 100%;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+nav li {
+	list-style: none;
+	display: block;
+	padding: 10px;
+	margin: auto;
+	text-align: left;
+	margin: 0;
+
+}
+nav a {
+	text-decoration: none;
+	color: white;
+}

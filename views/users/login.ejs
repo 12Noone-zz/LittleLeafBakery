@@ -1,0 +1,15 @@
+
+<nav class="navbar">
+	<ul>
+		<li><a href="/users/new">Sign Up!</a></li>
+		<li><a href="/">Home</a></li>
+	</ul>
+</nav>
+
+<form action="/users/login" method="post">
+	<label>Username: </label>
+	<input type="text" name="user[username]" placeholder="Username">
+	<label>Password: </label>
+	<input type="password" name="user[password]" placeholder="Password">
+	<input type="submit" value="Log in!">
+</form>

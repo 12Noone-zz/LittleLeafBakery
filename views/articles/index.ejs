@@ -1,0 +1,17 @@
+<%#/*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*/
+</*					 EJS INDEX FORM				    /
+/*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/%>		
+<nav class="navbar">
+	<ul>
+		<li><a href="/articles/new">New Article</a></li>
+		<li><a href="/">Home</a></li>
+	</ul>
+</nav>
+<dl>
+	<% articles.forEach(function(article, i) { %> 
+		<a href="/articles/<%= article._id%>">
+			<dt><%= article.title %></dt>
+		</a>
+	 <% }); %>
+	 <a href="/articles/new">Write A New Article!</a>
+</dl>

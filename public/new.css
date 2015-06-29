@@ -1,0 +1,32 @@
+form {
+	width: 50%;
+	position: relative;
+	overflow: auto;
+	margin:auto;
+	height: 100%;
+}
+
+form label {
+	margin: 1em 0 0.25em 0;
+}
+
+form label, form input, form textarea {
+	display: block;
+	width: 100%;
+}
+
+form input {
+	height: 2em;
+	line-height: 1em;
+	padding: 0.5em;
+}
+
+form textarea {
+	height: 15em;
+	resize: none;
+}
+
+input[type='submit'] {
+	border: 0;
+	height: 4em;
+}
