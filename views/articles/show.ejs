@@ -1,26 +1,34 @@
 <%#/*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*/
 </*			    SHOW CURRENT ARTICLE			    /
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/%>
+<link rel="stylesheet" href="/common.css">
+<link rel="stylesheet" href="/show.css">
 <nav class="navbar">
 	<ul>
 		<li><a href="/../">Home</a></li>
 		<li><a href="/articles/">Index</a></li>
 		<li><a href="/articles/new">New</a></li>
+		<li><a href="/articles/<%=article._id%>/edit">Edit Article</a></li>
 	</ul>
 </nav>
 <h1><%= article.title %></h1>
 <h3><b>by:</b> <em><%= article.author %></em></h3>
+<div class="image">
 <img src="<%=article.image%>">
+</div>
 <p><b>Category: </b><%= article.category %></p>
 <p><%= article.content %></p>
-<p>updated at: <%= article.date%></p>
+<p>updated at: <%= article.updatedAt%></p>
 <form action="/articles/<%= article._id %>?_method=DELETE" method="post">
 <input type="submit" value="Delete Article">
+</form>
+<form action="/articles/<%= article._id%>/vote" method="post">
+<p class="vote-count">Current vote: <%= article.vote%></p>
 <label for="upvote">Upvote
-<input type="radio" name="article[vote]" id="upvote">
+<input type="radio" name="article[vote]" id="upvote" value='1'>
 </label>
 <label for="downvote">Downvote
-<input type="radio" name="article[vote]" id="downvote">
+<input type="radio" name="article[vote]" id="downvote" value='-1'>
 </label>
+<input type="submit">
 </form>
-<a href="/articles/<%=article._id%>/edit">EDIT</a>

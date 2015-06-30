@@ -11,6 +11,12 @@ var express = require('express'),
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 
 /*~*~*~*~*~*~*~~*~*~*/
+/*		  SORT	     /
+/*~*~*~*~*~*~**~*~*~*/
+
+
+
+/*~*~*~*~*~*~*~~*~*~*/
 /*		  INDEX	     /
 /*~*~*~*~*~*~**~*~*~*/
 
@@ -66,6 +72,26 @@ router.get('/:id', function(req, res) {
 		};
 	});
 });
+
+/*~*~*~*~*~*~*~~*~*~*/
+/*	     VOTE        /
+/*~*~*~*~*~*~**~*~*~*/
+
+router.post('/:id/vote', function(req, res) {
+	var mongoId = req.params.id;
+	var num = parseInt(req.body.article.vote);
+	console.log(num);
+	Article.update({_id: mongoId}, {$inc : {vote: num}}, function(err, articleItem) {
+		if (err) {
+			console.log(err);
+		}
+		else {
+			console.log(articleItem);
+			res.redirect(301, '/articles/' + mongoId);
+		}
+	});
+});
+
 
 /*~*~*~*~*~*~*~~*~*~*/
 /*	   DELETE        /

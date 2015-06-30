@@ -1,14 +1,24 @@
-// var $upvote = $('#upvote');
-// var $downvote = $('#downvote');
-
-// $upvote.on('change', function() {
-// 	articleSchema.upvote += 1;
-// });
-
 document.querySelector( '#nav-toggle' ).addEventListener( 'click', function() {
   this.classList.toggle( 'active' );
-  console.log(this);
   document.querySelector('.navbar').classList.toggle('open');
   document.querySelector('#nav-toggle span').classList.toggle('active');
 });
+
+// $upvote = $('#upvote');
+// $downvote = $('#downvote');
+// $voteView = $('.vote-count');
+// var voteCount = 0;
+
+// $upvote.on('click', function(){
+// 	voteCount += 1;
+// 	$voteView.text('Current vote: ' + voteCount);
+// });
+
+// $downvote.on('click', function(){
+// 	voteCount -= 1;
+// 	$voteView.text('Current vote: ' + voteCount);
+// });
+
+
+
 

@@ -10,7 +10,7 @@ var express 		= require('express'),
 	morgan			= require('morgan'),
 	mongoose		= require('mongoose'),
 	session			= require('express-session');
-	// jquery			= require('jquery');
+	jquery			= require('jquery');
 
 //sets it to the process port. says "use whatever port is defined OR default to 3000"
 var PORT = process.env.PORT || 3000;

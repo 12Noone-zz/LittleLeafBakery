@@ -5,12 +5,18 @@
 		<li><a href="/">Home</a></li>
 	</ul>
 </nav>
-<form action="/users" method="post">
-	<label>Username: </label>
-	<input type="text" name="user[username]" placeholder="Username">
-	<label>Password: </label>
-	<input type="password" name="user[password]" placeholder="Password">
-	<textarea name="user[bio]"></textarea>
-	<input type="text" name="user[age]">
-	<input type="submit" value="Sign Up!">
+<div class="profile">
+	<form action="/users" method="post">
+		<label>Username: </label>
+		<input type="text" name="user[username]" placeholder="Username">
+		<label>Password: </label>
+		<input type="password" name="user[password]" placeholder="Password">
+		<label>Profile pic</label>
+		<input type="text" name="user[avatar]">
+		<label>Bio</label>
+		<textarea name="user[bio]"></textarea>
+		<label>Age</label>
+		<input type="text" name="user[age]">
+		<input type="submit" value="Sign Up!">
 </form>
+</div>

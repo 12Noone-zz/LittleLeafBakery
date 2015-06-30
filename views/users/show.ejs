@@ -1,13 +1,17 @@
 <link rel="stylesheet" href="/common.css">
-<link rel="stylesheet" href="/show.css">
+<link rel="stylesheet" href="/usershow.css">
 <nav class="navbar">
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/articles/new">Create New Article</a></li>
 		<li><a href="/users/<%= user.id %>/edit">Edit Profile</a>
-		<li><a href="/users/index">View All Users</a>
+		<li><a href="/users/">View All Users</a>
 	</ul>
 </nav>
 <h1><b><%= user.username%></b></h1>
 <h3>age: <%= user.age%></h3>
+<img src="<%= user.avatar %>" alt="">
 <p>bio: <%= user.bio%></p>
+<form action="/users/<%= user._id %>?_method=DELETE" method="post">
+<input type="submit" value="Delete User">
+</form>

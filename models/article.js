@@ -14,9 +14,9 @@ var articleSchema = Schema({
 	author: {type: String, require: true},
 	content: {type: String, require: true},
 	category: String,
-	date: {type: Date, default: Date.now},
-	upvote: 0,
-	downvote: 0,
+	createdAt: {type: Date, default: Date},
+	updatedAt: {type: Date, default: Date.now},
+	vote: {type: Number, default: 0},
 	image: String
 });
 
