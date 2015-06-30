@@ -93,7 +93,7 @@ server.use(function(req, res) {
 /*				DATABASE AND SERVER 			    /
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 
-mongoose.connect('MONGOURI');
+mongoose.connect(MONGOURI);
 var db = mongoose.connection;
 
 db.on('error', function() {
