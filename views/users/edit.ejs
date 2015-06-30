@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="/common.css">
+<nav class="navbar">
+	<ul>
+		<li><a href="/users/login">Log In</a></li>
+		<li><a href="/">Home</a></li>
+	</ul>
+</nav>
+<form action="/users/<%=user._id%>/?_method=PATCH" method="post">
+	<label>Username: <%= user.username %> </label><br>
+	bio: <textarea name="user[bio]"><%= user.bio %></textarea><br>
+	age: <input type="text" name="user[age]" placeholder="<%= user.age%>"><br>
+	<input type="submit" value="Update Profile">
+</form>

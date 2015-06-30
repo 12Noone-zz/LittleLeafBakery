@@ -51,5 +51,80 @@ router.post('/login', function  (req,res) {
 	});
 });
 
+/*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
+/*			          USER INDEX                    /
+/*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
+
+router.get('/', function(req, res) {
+	User.find({}, function(err, userArray) {
+		if (err) {
+			console.log(err);
+		}
+		else {
+			res.render('users/index', {users: userArray});
+		};
+	});
+});
+
+/*~*~*~*~*~*~*~~*~*~*/
+/*		  SHOW	     /
+/*~*~*~*~*~*~**~*~*~*/
+
+router.get('/:id', function(req, res) {
+	var mongoId = req.params.id;
+	User.findOne({_id: mongoId}, function(err, foundUser) {
+		if(err) {
+			console.log(err);
+		}
+		else {
+			res.render('users/show', {user: foundUser});
+		};
+	});
+});
+
+/*~*~*~*~*~*~*~~*~*~*/
+/*	   DELETE        /
+/*~*~*~*~*~*~**~*~*~*/
+
+router.delete('/:id', function(req,res) {
+	var mongoId = req.params.id;
+	User.remove({_id: mongoId}, function(err, foundUser) {
+	 	res.redirect(301, '/users');
+	});
+});
+
+/*~*~*~*~*~*~*~~*~*~*/
+/*	     EDIT        /
+/*~*~*~*~*~*~**~*~*~*/
+
+router.get('/:id/edit', function(req, res) {
+	var mongoId = req.params.id;
+	User.findOne({_id: mongoId}, function(err, foundUser) {
+		if (err) {
+			console.log(err);
+		}
+		else {
+			res.render('users/edit', {user: foundUser});
+		}
+	});
+});
+
+/*~*~*~*~*~*~*~~*~*~*/
+/*	    PATCH        /
+/*~*~*~*~*~*~**~*~*~*/
+
+router.patch('/:id', function(req,res) {
+	var mongoId = req.params.id;
+	var updated = req.body.article;
+
+	User.update({_id: mongoId}, updated, function(err, UserItem) {
+		if (err) {
+			console.log(err);
+		}
+		else {
+			res.redirect(301, '/users/' + mongoId);
+		}
+	});
+});
 module.exports = router;
 

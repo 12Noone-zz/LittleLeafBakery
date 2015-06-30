@@ -10,7 +10,10 @@ var express 		= require('express'),
 	morgan			= require('morgan'),
 	mongoose		= require('mongoose'),
 	session			= require('express-session');
+	// jquery			= require('jquery');
 
+//sets it to the process port. says "use whatever port is defined OR default to 3000"
+var PORT = process.env.PORT || 3000;
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 /*					SET VIEWS FOR EJS    			/
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
@@ -68,6 +71,7 @@ server.use(expressLayouts);
 
 var articlesController = require('./controllers/articles.js');
 var userController = require('./controllers/users.js');
+// var frontEnd = require('./public/frontend.js');
 server.use('/articles', articlesController);
 server.use('/users', userController);
 
@@ -102,7 +106,7 @@ db.on('error', function() {
 
 db.once('open', function() {
 	console.log("Database on, starting server...");
-	server.listen(3000, function() {
+	server.listen(PORT, function() {
 		console.log("server is on, lets rock and cinnamon roll");
 	});
 });

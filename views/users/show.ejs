@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="/common.css">
+<link rel="stylesheet" href="/show.css">
+<nav class="navbar">
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/articles/new">Create New Article</a></li>
+		<li><a href="/users/<%= user.id %>/edit">Edit Profile</a>
+		<li><a href="/users/index">View All Users</a>
+	</ul>
+</nav>
+<h1><b><%= user.username%></b></h1>
+<h3>age: <%= user.age%></h3>
+<p>bio: <%= user.bio%></p>

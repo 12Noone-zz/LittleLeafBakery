@@ -15,10 +15,10 @@ var articleSchema = Schema({
 	content: {type: String, require: true},
 	category: String,
 	date: {type: Date, default: Date.now},
-	vote: Boolean
+	upvote: 0,
+	downvote: 0,
+	image: String
 });
-
-
 
 var Article = mongoose.model('Article', articleSchema);
 

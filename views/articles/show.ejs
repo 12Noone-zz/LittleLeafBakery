@@ -1,7 +1,6 @@
 <%#/*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*/
 </*			    SHOW CURRENT ARTICLE			    /
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/%>
-
 <nav class="navbar">
 	<ul>
 		<li><a href="/../">Home</a></li>
@@ -11,6 +10,7 @@
 </nav>
 <h1><%= article.title %></h1>
 <h3><b>by:</b> <em><%= article.author %></em></h3>
+<img src="<%=article.image%>">
 <p><b>Category: </b><%= article.category %></p>
 <p><%= article.content %></p>
 <p>updated at: <%= article.date%></p>

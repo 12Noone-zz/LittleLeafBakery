@@ -1,3 +1,13 @@
 body {
 	background-color: #012644;
 }
+
+.featured {
+	height: 50%;
+	width: 50%;
+	border: 1px solid black;
+	position: relative;
+	margin: auto;
+	margin-top: 260px;
+	margin-right: 50px;
+}

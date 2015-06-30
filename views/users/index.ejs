@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="common.css">
+<nav class="navbar">
+	<ul>
+		<li><a href="/articles/new">New Article</a></li>
+		<li><a href="/">Home</a></li>
+	</ul>
+</nav>
+<div class="index">	
+	<h1>Current Users</h1>
+	<dl>
+		<% users.forEach(function(user, i) { %> 
+			<a href="/users/<%= user._id%>">
+				<dt><%= user.username %></dt>
+			</a>
+		 <% }); %>
+	</dl>
+</div>
