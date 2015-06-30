@@ -14,6 +14,8 @@ var express 		= require('express'),
 
 //sets it to the process port. says "use whatever port is defined OR default to 3000"
 var PORT = process.env.PORT || 3000;
+var MONGOURI = process.env.MONGOLAB_URI || 
+'mongodb://localhost:27017/wiki_app';
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 /*					SET VIEWS FOR EJS    			/
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
@@ -92,7 +94,7 @@ server.use(function(req, res) {
 /*				DATABASE AND SERVER 			    /
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 
-mongoose.connect('mongodb://localhost:27017/wiki_app');
+mongoose.connect('MONGOURI');
 var db = mongoose.connection;
 
 db.on('error', function() {
