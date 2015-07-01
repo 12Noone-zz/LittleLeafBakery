@@ -2,19 +2,14 @@
 /*					REQUIRE ALL LANGUAGES			/
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 
-var express = require('express'),
-	router	= express.Router(),
-	Article	= require('../models/article.js'); 
+var express 	= require('express'),
+	router		= express.Router(),
+	Article		= require('../models/article.js'),
+	Vote 		= require('../models/vote.js');
 
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 /*				        ROUTES				    	/
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
-
-/*~*~*~*~*~*~*~~*~*~*/
-/*		  SORT	     /
-/*~*~*~*~*~*~**~*~*~*/
-
-
 
 /*~*~*~*~*~*~*~~*~*~*/
 /*		  INDEX	     /
@@ -45,7 +40,7 @@ router.get('/new', function(req, res) {
 
 router.post('/', function(req, res) {
 	var newArticle = new Article(req.body.article);
-	// newArticle.author = req.session.currentuser;
+	newArticle.author = req.session.currentUser;
 	newArticle.save(function(err, article) {
 		if(err) {
 			console.log(err);
@@ -68,7 +63,10 @@ router.get('/:id', function(req, res) {
 			console.log(err);
 		}
 		else {
-			res.render('articles/show', {article: foundArticle});
+			Vote.findOne({ article: mongoId, author: req.session.currentUser }, function (err, vote) {
+				res.locals.currentUserHasNotVoted = !vote;
+				res.render('articles/show', {article: foundArticle});
+			})
 		};
 	});
 });
@@ -81,17 +79,31 @@ router.post('/:id/vote', function(req, res) {
 	var mongoId = req.params.id;
 	var num = parseInt(req.body.article.vote);
 	console.log(num);
-	Article.update({_id: mongoId}, {$inc : {vote: num}}, function(err, articleItem) {
-		if (err) {
-			console.log(err);
-		}
-		else {
-			console.log(articleItem);
-			res.redirect(301, '/articles/' + mongoId);
+	Vote.findOne({ article: mongoId, author: req.session.currentUser }, function(err, vote){
+		if(vote) {
+			res.redirect(301, 'articles/show');
+		} 
+		else {	
+			Article.update({_id: mongoId}, {$inc : {vote: num}}, function(err, articleItem) {
+				if (err) {
+					console.log(err);
+				} else {
+					Vote.create({
+						article: mongoId,
+						author: req.session.currentUser, 
+					}, function (err, vote) {
+						if (err) {
+							console.log(err);
+						} else {
+							console.log(articleItem);
+							res.redirect(301, '/articles/' + mongoId);
+						}
+					});
+				}
+			});
 		}
 	});
 });
-
 
 /*~*~*~*~*~*~*~~*~*~*/
 /*	   DELETE        /

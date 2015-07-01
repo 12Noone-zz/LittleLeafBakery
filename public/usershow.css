@@ -1,7 +1,33 @@
-.profile img {
-	height: 25%;
-	width: 25%;
-	text-align: center;
+.profile-container {
+	width: 50%;
+	overflow: auto;
+	margin: auto;
+	margin-top: 60px;
+}
+
+.profile .profile-img {
+	height: 40%;
+	width: 40%;
+	float: left;
 	margin: auto;
 	position: relative;
+}
+
+.bio {
+	width: 50%;
+	height: 300px;
+	overflow: auto;
+	text-align: left;
+	margin: auto;
+}
+
+h1 {
+	display: block;
+	text-align: left;
+}
+h3 {
+	position: relative;
+	text-align: left;
+	margin-left: 10px;
+	font-size: 20px;
 }

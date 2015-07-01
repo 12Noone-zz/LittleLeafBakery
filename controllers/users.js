@@ -18,8 +18,12 @@ router.post('/', function(req, res) {
 	var newUser = new User(req.body.user);
 
 	newUser.save(function(err, user){
-		console.log(newUser);
-		res.redirect(301, '../')
+		if (err) {
+			console.log(err); 
+		} else {
+			console.log(newUser);
+			res.redirect(301, '../')
+		}
 	});
 });
 
@@ -36,6 +40,7 @@ router.get('/login', function(req,res){
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 
 router.post('/login', function  (req,res) {
+	console.log(req.body);
 	var loginAttempt = req.body.user;
 	User.findOne({username: loginAttempt.username}, function  (err, user) {
 		if (user && user.password === loginAttempt.password) {
@@ -115,7 +120,7 @@ router.get('/:id/edit', function(req, res) {
 
 router.patch('/:id', function(req,res) {
 	var mongoId = req.params.id;
-	var updated = req.body.article;
+	var updated = req.body.user;
 
 	User.update({_id: mongoId}, updated, function(err, UserItem) {
 		if (err) {

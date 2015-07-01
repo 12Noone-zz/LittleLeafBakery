@@ -1,11 +1,16 @@
-<link rel="stylesheet" href="/common.css">
-<nav class="navbar">
-	<ul>
-		<li><a href="/users/login">Log In</a></li>
-		<li><a href="/">Home</a></li>
-	</ul>
-</nav>
-<div class="profile">
+<link rel="stylesheet" href="/usershow.css">
+<div id="column1">
+	<nav class="navbar">
+		<ul>
+			<li><a href="/users/login">Log In</a></li>
+			<li><a href="/">Home</a></li>
+			<li><a href="/users/">View All Users</a></li>
+			<li><a href="/articles/">View All Articles</a></li>
+		</ul>
+	</nav>
+</div>
+<div id="column2">
+	<h1>Sign Up</h1>
 	<form action="/users" method="post">
 		<label>Username: </label>
 		<input type="text" name="user[username]" placeholder="Username">
@@ -16,7 +21,7 @@
 		<label>Bio</label>
 		<textarea name="user[bio]"></textarea>
 		<label>Age</label>
-		<input type="text" name="user[age]">
+		<input type="number" name="user[age]">
 		<input type="submit" value="Sign Up!">
 </form>
 </div>

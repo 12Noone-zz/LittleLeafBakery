@@ -1,14 +1,26 @@
 <link rel="stylesheet" href="home.css">
-<nav class="navbar">
-	<ul>
-		<li><a href="/users/login">Log In</a></li>
-		<li><a href="/users/new">Sign Up!</a></li>
-		<li><a href="/articles/new">New Article</a></li>
-		<li><a href="/articles/">All Articles</a></li>
-		<li><a href="/users">View All Users</a>
-	</ul>
-</nav>
-<h1></h1>
-<div class="featured">
-	<h3>Featured Article</h3>
+<div id="column1">	
+	<nav class="navbar">
+		<ul>
+			<li><a href="/users/login">Log In</a></li>
+			<li><a href="/users/new">Sign Up!</a></li>
+			<li><a href="/articles/new">New Article</a></li>
+			<li><a href="/articles/">All Articles</a></li>
+			<li><a href="/users">View All Users</a>
+		</ul>
+	</nav>
 </div>
+<div id="column2">
+	<h1>Speak Up!</h1>
+	<p>Say it outloud</p>
+	<div class="featured">
+		<h5><b>Today's Featured Article</b></h5>
+		<%if (featuredArticle) { %>
+		<h1><%= featuredArticle.title %></h1>
+		<h3><%= featuredArticle.author %></h3>
+		<img src="<%= featuredArticle.image%>">
+		
+		<p><%= featuredArticle.content %></p>
+</div>
+</div>
+<%}%>

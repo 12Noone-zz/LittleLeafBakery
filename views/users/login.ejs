@@ -1,16 +1,19 @@
-<link rel="stylesheet" href="/common.css">
-<nav class="navbar">
-	<ul>
-		<li><a href="/">Home</a></li>
-		<li><a href="/users/new">Sign Up!</a></li>
-		<li><a href="/users/">View All Users</a>
-	</ul>
-</nav>
-
-<form action="/users/login" method="post">
-	<label>Username: </label>
-	<input type="text" name="user[username]" placeholder="Username">
-	<label>Password: </label>
-	<input type="password" name="user[password]" placeholder="Password">
-	<input type="submit" value="Log in!">
+<div id="column1">
+	<nav class="navbar">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/users/new">Sign Up!</a></li>
+			<li><a href="/users/">View All Users</a>
+		</ul>
+	</nav>
+</div>
+<div id="column2">
+	<h1>Log In</h1>
+	<form action="/users/login" method="post">
+		<label>Username: </label>
+		<input type="text" name="user[username]" placeholder="Username">
+		<label>Password: </label>
+		<input type="password" name="user[password]" placeholder="Password">
+		<input type="submit" value="Log in!">
 </form>
+</div>

@@ -9,8 +9,10 @@ var express 		= require('express'),
 	expressLayouts	= require('express-ejs-layouts'),
 	morgan			= require('morgan'),
 	mongoose		= require('mongoose'),
-	session			= require('express-session');
-	jquery			= require('jquery');
+	session			= require('express-session'),
+	jquery			= require('jquery'),
+	Article			= require('./models/article.js'),
+	authChecker		= require('./utilities/authChecker.js');
 
 //sets it to the process port. says "use whatever port is defined OR default to 3000"
 var PORT = process.env.PORT || 3000;
@@ -73,7 +75,7 @@ server.use(expressLayouts);
 var articlesController = require('./controllers/articles.js');
 var userController = require('./controllers/users.js');
 // var frontEnd = require('./public/frontend.js');
-server.use('/articles', articlesController);
+server.use('/articles', authChecker, articlesController);
 server.use('/users', userController);
 
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
@@ -81,7 +83,18 @@ server.use('/users', userController);
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 
 server.get('/', function(req, res){
-	res.render('homepage');
+	Article.find().sort({vote: -1}).limit(1).exec(function(err, foundArticle) {
+	var data = {
+		featuredArticle: foundArticle[0]
+	};
+	if (foundArticle) {
+		console.log(foundArticle);
+		res.render('homepage', data);
+	}
+	else {
+		res.render('articles/new');
+	}
+	});
 });
 
 server.use(function(req, res) {
