@@ -1,5 +1,5 @@
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
-/*				SESSIONS AND LOGINS     			/
+/*			    USER AUTHENTICATION     			/
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
 
 function isAuthenticated(req, res, next) {
