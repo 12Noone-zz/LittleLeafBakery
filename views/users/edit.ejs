@@ -7,6 +7,8 @@
 <form action="/users/<%=user._id%>/?_method=PATCH" method="post">
 	<label>Username: <%= user.username %> </label><br>
 	bio: <textarea name="user[bio]"><%= user.bio %></textarea><br>
+	<label>Edit profile photo</label>
+	<input type="text" name="user[avatar]">
 	age: <input type="text" name="user[age]" placeholder="<%= user.age%>"><br>
 	<input type="submit" value="Update Profile">
 </form>
