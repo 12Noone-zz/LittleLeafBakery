@@ -1,18 +1,13 @@
-<link rel="stylesheet" href="home.css">
-<div id="column1">	
 	<nav class="navbar">
-		<ul>
-			<li><a href="/users/login">Log In</a></li>
-			<li><a href="/users/new">Sign Up!</a></li>
-			<li><a href="/articles/new">New Article</a></li>
-			<li><a href="/articles/">All Articles</a></li>
-			<li><a href="/users">View All Users</a>
-		</ul>
+		<div class="logo">
+			<img src="logo.png">
+		</div>
 	</nav>
-</div>
-<div id="column2">
-	<h1>Speak Up!</h1>
-	<p>Say it outloud</p>
+	<div class="buttons">
+		<div class="button"><a href="users/login">Log In</a></div>
+		<p>- or -</p>
+		<div class="button"><a href="users/new">Sign Up</a></div>
+	</div>
 	<div class="featured">
 		<h5>Today's Featured Article</h5>
 		<%if (featuredArticle) { %>
@@ -22,5 +17,5 @@
 		
 		<p><%= featuredArticle.content %></p>
 </div>
-</div>
+
 <%}%>
