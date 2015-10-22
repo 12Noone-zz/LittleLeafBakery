@@ -2,18 +2,17 @@
 </*			    SHOW CURRENT ARTICLE			    /
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/%>
 
-<link rel="stylesheet" href="/show.css">
-<div id="column1">	
+<div class="container">
 	<nav class="navbar">
 		<ul>
 			<li><a href="/../">Home</a></li>
-			<li><a href="/articles/">Index</a></li>
-			<li><a href="/articles/new">New</a></li>
+			<li><a href="/articles/">All Articles</a></li>
+			<li><a href="/articles/new">New Article</a></li>
 			<li><a href="/articles/<%=article._id%>/edit">Edit Article</a></li>
 		</ul>
 	</nav>
-</div>
-<div id="column2">
+
+
 	<h1><%= article.title %></h1>
 	<h3><b>by:</b> <em><%= article.author %></em></h3>
 	<div class="image">
@@ -22,19 +21,27 @@
 	<p><b>Category: </b><%= article.category %></p>
 	<p id="content"><%= article.content %></p>
 	<p>updated at: <%= article.updatedAt%></p>
+	
 	<form action="/articles/<%= article._id %>?_method=DELETE" method="post">
-	<input type="submit" value="Delete Article">
+	
+	<input type="submit" value="Delete Article" class="LLB-btn">
 	</form>
-	<p class="vote-count">Current vote: <%= article.vote%></p>
+	<div class="voting-section">
 	<% if (currentUserHasNotVoted) { %>
-		<form action="/articles/<%= article._id%>/vote" method="post">
-			<label for="upvote">Upvote
-			<input type="radio" name="article[vote]" id="upvote" value='1'>
-			</label>
-			<label for="downvote">Downvote
-			<input type="radio" name="article[vote]" id="downvote" value='-1'>
-			</label>
-			<input type="submit">
-		</form>
-	<% } %>
+		<h5>Like it? Hate it? Weigh in!</5>
+		<div class="vote-arrows">
+				<form action="/articles/<%= article._id%>/vote" method="post">
+					<label for="downvote"><i class="fa fa-arrow-down"></i></label>
+					<input type="radio" name="article[vote]" id="downvote" value='-1' id="downvote">
+
+					<label for="upvote"><i class="fa fa-arrow-up"></i></label>
+					<input type="radio" name="article[vote]" id="upvote" value='1' id="upvote">
+
+					
+					<input type="submit" class="LLB-btn">
+				</form>
+			<% } %>
+		</div>
+	</div>
 </div>
+

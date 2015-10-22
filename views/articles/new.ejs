@@ -1,29 +1,39 @@
-<link rel="stylesheet" href="/new.css">
-<div id="column1">
+
 	<nav class="navbar">
 		<ul>
 			<li><a href="/">Home</a></li>
 			<li><a href="/articles/">All Articles</a></li>
-			<li><a href="/users/">View All Users</a>
+			<li><a href="/users/">All Users</a>
 			<li><a href="/users/new">Sign Up</a></li>
 			<li><a href="/users/login">Log In</a></li>
 		</ul>
 	</nav>
-</div>
-<div id="column2">
+	<img src="https://c2.staticflickr.com/4/3131/3335477703_48ef7cfc5a_b.jpg" class="profile-img">
 	<h1>New Article</h1>
-	<form action="/articles" method="post">
-		<label>Title</label>
-		<input type="text" name="article[title]">
-		<label>Content</label>
-		<textarea name="article[content]"></textarea>
-		<label>Category</label>
-		<input type="text" name="article[category]">
-		<label for="Submit Article!"></label>
-		<label>Add a photo</label>
-		<input type="text" name="article[image]">
-		<input type="submit" value="Submit Article!">
+	<form action="/articles" method="post" class="pure-form pure-form-aligned article-form">
+		<div class="pure-control-group">
+			
+			<label>Title</label>
+			<input type="text" name="article[title]" class="title">
+		</div>
+		<div class="pure-control-group">
+			
+			<label>Content</label>
+			<textarea name="article[content]" class="content"></textarea>
+		</div>
+		<div class="pure-control-group">
+			
+			<label>Category</label>
+			<input type="text" name="article[category]" class="category">
+		</div>
+		<div class="pure-control-group">
+			
+			<label>Add a photo</label>
+			<input type="text" name="article[image]" class="image">
+		</div>
+			<label for="Submit Article!"></label>
+			<input type="submit" value="Submit Article!" class="LLB-btn">
 	</form>
-</div>
+
 
 

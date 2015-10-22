@@ -1,27 +1,38 @@
-<link rel="stylesheet" href="/usershow.css">
-<div id="column1">
+
 	<nav class="navbar">
 		<ul>
 			<li><a href="/users/login">Log In</a></li>
 			<li><a href="/">Home</a></li>
-			<li><a href="/users/">View All Users</a></li>
-			<li><a href="/articles/">View All Articles</a></li>
+			<li><a href="/users/">All Users</a></li>
+			<li><a href="/articles/">All Articles</a></li>
 		</ul>
 	</nav>
-</div>
-<div id="column2">
+	<img src="http://7-themes.com/data_images/out/53/6953351-cappuccino-foam-pattern.jpg" class="profile-img">
+<div class="signup-container">
+		
 	<h1>Sign Up</h1>
-	<form action="/users" method="post">
-		<label>Username: </label>
-		<input type="text" name="user[username]" placeholder="Username">
-		<label>Password: </label>
-		<input type="password" name="user[password]" placeholder="Password">
-		<label>Profile pic</label>
-		<input type="text" name="user[avatar]">
-		<label>Bio</label>
-		<textarea name="user[bio]"></textarea>
-		<label>Age</label>
-		<input type="number" name="user[age]">
-		<input type="submit" value="Sign Up!">
+	<form action="/users" method="post" class="pure-form pure-form-aligned article-form">
+		<div class="pure-control-group">
+			<label>Username: </label>
+			<input type="text" name="user[username]" placeholder="Username">
+		</div>
+		<div class="pure-control-group">
+			<label>Password: </label>
+			<input type="password" name="user[password]" placeholder="Password">
+		</div>
+		<div class="pure-control-group">
+			<label>Profile pic</label>
+			<input type="text" name="user[avatar]">
+		</div>
+		<div class="pure-control-group">
+			<label>Bio</label>
+			<textarea name="user[bio]"></textarea>
+		</div>
+		<div class="pure-control-group">
+			<label>Age</label>
+			<input type="number" name="user[age]">
+		</div>
+				
+		<input type="submit" value="Sign Up!" class="LLB-btn">
 </form>
 </div>

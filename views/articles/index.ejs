@@ -1,22 +1,24 @@
 <%#/*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~~*/
 </*					 EJS INDEX FORM				    /
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/%>	
-
-<nav class="navbar">
-	<ul>
-		<li><a href="/">Home</a></li>
-		<li><a href="/articles/new">New Article</a></li>
-		<li><a href="/users/">View All Users</a></li>
-	</ul>
-</nav>
-<div class="index">
-	<h1>All Articles</h1>
-	<dl>
-		<% articles.forEach(function(article, i) { %> 
-			<a href="/articles/<%= article._id%>">
-				<dt><%= article.title %></dt>
-			</a>
-		 <% }); %>
-		 <a href="/articles/new">Write A New Article!</a>
-	</dl>
+<div class="container">
+	<nav class="navbar">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/articles/new">New Article</a></li>
+			<li><a href="/users/">All Users</a></li>
+		</ul>
+	</nav>
+	<img src="http://farm6.static.flickr.com/5061/5632532685_f84d841dce_o.jpg" class="profile-img">
+	<div class="index">
+		<h1>All Articles</h1>
+		<dl>
+			<% articles.forEach(function(article, i) { %> 
+				<a href="/articles/<%= article._id%>">
+					<dt><%= article.title %></dt>
+				</a>
+			 <% }); %>
+			 <a href="/articles/new">Write A New Article!</a>
+		</dl>
+	</div>
 </div>

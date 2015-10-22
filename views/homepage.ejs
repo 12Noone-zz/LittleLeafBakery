@@ -1,23 +1,23 @@
-	
-		<div class="logo">
-			<img src="logo.png">
-			<h1>Little Leaf Bakery</h1>
-			<p>Message Board</p>
+
+<div class="container">
+	<div class="main-header">		
+		<h1>Little Leaf Bakery</h1>
+		<p><span>A real<span> message board for a make believe bakery</p>
+		<div class="button-group">
+			<div class="button" id="login"><a href="users/login">Log In</a></div>
+			<div class="button" id="new-user"><a href="users/new">Sign Up</a></div>
 		</div>
-	
-	<div class="buttons">
-		<div class="button1"><a href="users/login">Log In</a></div>
-		<p>- or -</p>
-		<div class="button2"><a href="users/new">Sign Up</a></div>
 	</div>
 	<div class="featured">
 		<h5>Today's Featured Article</h5>
 		<%if (featuredArticle) { %>
-		<h1><%= featuredArticle.title %></h1>
-		<h3><%= featuredArticle.author %></h3>
-		<img src="<%= featuredArticle.image%>">
-		
-		<p><%= featuredArticle.content %></p>
+			<h1><a href="/articles/<%=featuredArticle._id%>"><%= featuredArticle.title %></a></h1>
+			<h3>By: <%= featuredArticle.author %></h3>
+			<img src="<%= featuredArticle.image%>" class="featured-image">
+			<!-- <p class="featured-content"><%= featuredArticle.content %></p> -->
+		<%}%>
+	</div>
+
+	</div>
 </div>
 
-<%}%>

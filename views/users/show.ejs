@@ -1,13 +1,13 @@
-<link rel="stylesheet" href="/usershow.css">
+
 <nav class="navbar">
 	<ul>
 		<li><a href="/">Home</a></li>
 		<li><a href="/articles/new">Create New Article</a></li>
 		<li><a href="/users/<%= user.id %>/edit">Edit Profile</a>
-		<li><a href="/users">View All Users</a>
+		<li><a href="/users">All Users</a>
 	</ul>
 </nav>
-<div class="profile-container">
+
 	<h1><b><%= user.username%></b></h1>
 	<h3>age: <%= user.age%></h3>
 	<div class="profile">
@@ -18,5 +18,5 @@
 	</div>
 </div>
 <form action="/users/<%= user._id %>?_method=DELETE" method="post">
-<input type="submit" value="Delete Profile">
+<input type="submit" value="Delete Profile" class="LLB-btn">
 </form>
