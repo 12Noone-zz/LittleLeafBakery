@@ -10,12 +10,12 @@
 </nav>
 
 	<h1><b><%= user.username%></b></h1>
-	<h3>age: <%= user.age%></h3>
+	<h3 id='age'>age: <%= user.age%></h3>
 	<div class="profile">
 		<img src="<%= user.avatar %>" class="profile-img">
 	</div>
 	<div class="bio">
-		<p>bio: <%= user.bio%></p>
+		<p id='bio'>bio: <%= user.bio%></p>
 	<form action="/users/<%= user._id %>?_method=DELETE" method="post">
 
 		<input type="submit" value="Delete Profile" class="LLB-btn delete-button">

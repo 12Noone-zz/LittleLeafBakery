@@ -359,13 +359,6 @@ form .submit:hover {
      border: 1px solid #7F2008;
 }
 
-.delete-button {
-     width: 180px;
-     position: relative;
-     margin-bottom: 15px;
-     line-height: 57px;
-}
-
 
 /*******************/
 /*                 */
@@ -435,6 +428,10 @@ form .submit:hover {
      color: #442C1A;
      text-align: left;
 }
+#bio, #age {
+     color: #442C1A;
+     font-size: 25px;
+}
 
 
 /*********************************/
@@ -467,7 +464,6 @@ form .submit:hover {
      .profile-img {
           width: 100%;
           text-align: center;
-          height: 600px;
      }
      .button-group {
           width: 800px;
