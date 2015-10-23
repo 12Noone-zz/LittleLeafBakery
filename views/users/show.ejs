@@ -1,4 +1,5 @@
-
+<div class="container">
+	
 <nav class="navbar">
 	<ul>
 		<li><a href="/">Home</a></li>
@@ -15,8 +16,10 @@
 	</div>
 	<div class="bio">
 		<p>bio: <%= user.bio%></p>
+	<form action="/users/<%= user._id %>?_method=DELETE" method="post">
+
+		<input type="submit" value="Delete Profile" class="LLB-btn delete-button">
+
+	</form>
 	</div>
 </div>
-<form action="/users/<%= user._id %>?_method=DELETE" method="post">
-<input type="submit" value="Delete Profile" class="LLB-btn">
-</form>

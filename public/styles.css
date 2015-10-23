@@ -54,7 +54,6 @@
  ol,
  ul,
  li,
- fieldset,
  form,
  label,
  legend,
@@ -161,8 +160,14 @@
  }
  /* close commented backslash hack */
 
+#pure-override {
+     margin: 0;
+}
+
+
 h1, h3, h5 {
-     color: white;
+     color: #442C1A;
+     margin: 0;
 }
 
 .LLB-btn {
@@ -187,6 +192,10 @@ h1, h3, h5 {
 
 body {
      background-color: #442C1A;
+     background-image: url('http://www.interiorplace.com/product_images/a/011/683303L__15636.jpg');
+
+     
+
 }
 
 
@@ -197,13 +206,15 @@ body {
 /*******************/
 
 .container {
-     max-width: 400px;
+     min-width: 400px;
+     background-color: #D8DBC7;
+     text-align: center;
 }
 .main-header {
-     background-color: #EDF0DA;
+     background-color: #352C24;
      width: 100%;
-     background-image: url('http://www.realbakingwithrose.com/7.Ultimate-Croissant.jpg');
      height: 300px;
+     margin-top: -27px;
 }
 
 .main-header h1 {
@@ -293,18 +304,18 @@ body {
      float: left;
      line-height: 37px;
      -webkit-transition: background-color .25s ease-in;
-     width: 33.33%;
+     width: 24%;
      height: 50px;
+     text-align: center;
 
 }
 
 .navbar a:link, a:visited {
     display: block;
-    width: 120px;
+    width: 100%;
     font-weight: bold;
     color: white;
     text-align: center;
-    padding: 4px;
     text-decoration: none;
     font-size: 20px;
 }
@@ -315,9 +326,12 @@ body {
 
 .index h1 {
      font-size: 24px;
-     color: white;
+     color: #442C1A;
 }
 
+.index a {
+     color: #442C1A;
+}
 /*******************/
 /*                 */
 /*   ARTICLE NEW   */ 
@@ -345,6 +359,13 @@ form .submit:hover {
      border: 1px solid #7F2008;
 }
 
+.delete-button {
+     width: 180px;
+     position: relative;
+     margin-bottom: 15px;
+     line-height: 57px;
+}
+
 
 /*******************/
 /*                 */
@@ -354,6 +375,10 @@ form .submit:hover {
 
 .signup-container {
      margin-top: -21px;
+}
+
+.pure-control-group {
+     color: #442C1A;
 }
 
 
@@ -368,6 +393,10 @@ form .submit:hover {
      text-align: center;
 }
 
+.voting-section h2 {
+     font-size: 20px;
+     font-weight: bold;
+}
 
 
 .vote-arrows input[type='radio'] {
@@ -375,38 +404,27 @@ form .submit:hover {
      position: absolute;
      width: 30px;
      height: 30px;
-     cursor: pointer;
+     
 }
 
-.vote-arrows input[type='radio'] + label {
+.vote-arrows label {    
+     line-height: 30px;
+     display: inline-block;
+}
+
+.vote-arrows .fa {
      font-size: 30px;
-     margin: .6em;
-     color: red;
+     color: #442C1A;
      text-shadow: 1px 1px #fff;
+     -webkit-transition: color .5s;
+     margin: 10px 10px;
+     font-size: 40px;
 }
 
-.vote-arrows input[type='radio']:checked + label {
-     color: yellow;
+.vote-arrows input[type='radio']:checked + .fa {
+     color: #FFD13A;
 }
 
-.vote-arrows input[type='radio'] {
-     opacity: 0;
-     position: absolute;
-     width: 30px;
-     height: 30px;
-     cursor: pointer;
-}
-
-.vote-arrows input[type='radio'] + label {
-     font-size: 30px;
-     margin: .6em;
-     color: red;
-     text-shadow: 1px 1px #fff;
-}
-
-.vote-arrows input[type='radio']:checked + label {
-     color: yellow;
-}
 
 .profile-img {
      width: 100%;
@@ -414,8 +432,56 @@ form .submit:hover {
 
 #content {
      margin-bottom: 15px;
+     color: #442C1A;
+     text-align: left;
 }
 
 
+/*********************************/
+/*                               */
+/*       DESKTOP STYLING         */
+/*                               */
+/*********************************/
 
-
+@media (min-width: 600px) {
+     .container {
+          width: 800px;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+          background-color: #D8DBC7;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+     }
+     .navbar ul li a {
+          text-align: center;
+     }
+     .main-header {
+          max-width: 1200px;
+          text-align: center;
+          width: 100%;
+     }
+     .featured-image {
+          width: 400px;
+     }
+     .profile-img {
+          width: 100%;
+          text-align: center;
+          height: 600px;
+     }
+     .button-group {
+          width: 800px;
+          height: 100%;
+          text-align: center;
+     }
+     .button {
+          display: inline-block;
+          width: 200px;
+          left: 80px;
+          position: relative;
+          line-height: 25px;
+     }
+     .login-container {
+          margin-top: 5px;
+     }
+}

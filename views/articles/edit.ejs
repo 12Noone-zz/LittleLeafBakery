@@ -1,19 +1,31 @@
-<link rel="stylesheet" href="edit.css">
+<div class="container">
+	
+
 <nav class="navbar">
 	<ul>
-		<li><a href="/articles/new">New Article</a></li>
-		<li><a href="/articles/">All Articles</a></li>
 		<li><a href="/">Home</a></li>
+		<li><a href="/articles/new">New Article</a></li>
+		<li><a href="/users/">All Users</a>
+		<li><a href="/articles/">All Articles</a></li>
 	</ul>
 </nav>
-<form action="/articles/<%=article._id%>/?_method=PATCH" method="post">
+<form action="/articles/<%=article._id%>/?_method=PATCH" method="post" class="pure-form pure-form-aligned article-form">
+	<div class="pure-control-group">
 	<label>Author:</label>
 	<input type="text" name="article[author]" value="<%= article.author%>">
-	<label>Title:</label>
-	<input type="text" name="article[title]" value="<%= article.title%>">
-	<label>Content:</label>
-	<textarea name="article[content]"><%= article.content%></textarea>
-	<label>Change Photo</label>
-	<input type="text" name="article[image]">
-	<input type="submit" value="Edit My Article" class="LLB-btn">
+	</div>
+	<div class="pure-control-group">
+		<label>Title:</label>
+		<input type="text" name="article[title]" value="<%= article.title%>">
+	</div>
+	<div class="pure-control-group">
+		<label>Content:</label>
+		<textarea name="article[content]" rows="25" cols="60"><%= article.content%></textarea>
+	</div>
+	<div class="pure-control-group">
+		<label>Change Photo</label>
+		<input type="text" name="article[image]">
+		<input type="submit" value="Edit My Article" class="LLB-btn">
+	</div>
 </form>
+</div>

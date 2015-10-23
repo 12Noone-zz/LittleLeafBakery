@@ -1,25 +1,27 @@
-
+<div class="container">
 	<nav class="navbar">
 		<ul>
 			<li><a href="/">Home</a></li>
 			<li><a href="/users/new">Sign Up!</a></li>
 			<li><a href="/users/">All Users</a>
+			<li><a href="/articles/">All Articles</li>
 		</ul>
 	</nav>
+	<img src="http://4.bp.blogspot.com/-Ou_kLX5ukXo/VRGHO2hZ1OI/AAAAAAAAC28/ml_yb8X9F2Y/s1600/barnwood%2Bwelcome%2Bsign1.jpg" class="profile-img">
+	<div class="login-container">
+		<h1 id="pure-override">Log In</h1>
+		<form action="/users/login" method="post" class="pure-form pure-form-aligned article-form">
+			<div class="pure-control-group">
+				
+			<label>Username: </label>
+			<input type="text" name="user[username]" placeholder="Username">
+			</div>
+			<div class="pure-control-group">
+				
+			<label>Password: </label>
+			<input type="password" name="user[password]" placeholder="Password">
+			</div>
+			<input type="submit" value="Log in!" class="LLB-btn">
+		</form>
 </div>
-<img src="http://4.bp.blogspot.com/-Ou_kLX5ukXo/VRGHO2hZ1OI/AAAAAAAAC28/ml_yb8X9F2Y/s1600/barnwood%2Bwelcome%2Bsign1.jpg" class="profile-img">
-	<h1>Log In</h1>
-	<form action="/users/login" method="post" class="pure-form pure-form-aligned article-form">
-		<div class="pure-control-group">
-			
-		<label>Username: </label>
-		<input type="text" name="user[username]" placeholder="Username">
-		</div>
-		<div class="pure-control-group">
-			
-		<label>Password: </label>
-		<input type="password" name="user[password]" placeholder="Password">
-		</div>
-		<input type="submit" value="Log in!" class="LLB-btn">
-</form>
 </div>

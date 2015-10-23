@@ -3,6 +3,7 @@
 /*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/%>
 
 <div class="container">
+	
 	<nav class="navbar">
 		<ul>
 			<li><a href="/../">Home</a></li>
@@ -28,14 +29,21 @@
 	</form>
 	<div class="voting-section">
 	<% if (currentUserHasNotVoted) { %>
-		<h5>Like it? Hate it? Weigh in!</5>
+		<h2>Love it? Hate it? Weigh in!</h2>
 		<div class="vote-arrows">
 				<form action="/articles/<%= article._id%>/vote" method="post">
-					<label for="downvote"><i class="fa fa-arrow-down"></i></label>
-					<input type="radio" name="article[vote]" id="downvote" value='-1' id="downvote">
-
-					<label for="upvote"><i class="fa fa-arrow-up"></i></label>
-					<input type="radio" name="article[vote]" id="upvote" value='1' id="upvote">
+					<section>
+						<label for="downvote">
+							<input type="radio" name="article[vote]" id="downvote" value='-1' id="downvote">
+							<i class="fa fa-arrow-down"></i>
+						</label>
+						
+						<label for="upvote">
+							<input type="radio" name="article[vote]" id="upvote" value='1' id="upvote">
+							<i class="fa fa-arrow-up"></i>
+						</label>
+					</section>
+					
 
 					
 					<input type="submit" class="LLB-btn">
@@ -44,4 +52,5 @@
 		</div>
 	</div>
 </div>
+
 
